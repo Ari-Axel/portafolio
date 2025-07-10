@@ -580,6 +580,7 @@ article .icono{
 
 .titulo-proyecto{
   color: var(--azul-principal);
+  margin-top: 0.5rem;
 }
 
 .proyecto-img{
