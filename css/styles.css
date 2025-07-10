@@ -515,7 +515,7 @@ section {
 
 .experiencia-subtitulo{
   color: #2f4156;
-  padding: 2rem;
+  padding: 1.5rem;
 }
 
 #experiencia{
@@ -527,6 +527,7 @@ section {
   font-weight: 600;
   font-size: 1.7rem;
   margin-bottom: 1.5rem;
+  margin: auto;
 }
 
 .detalles-experiencia-contenedor{
@@ -567,7 +568,7 @@ article .icono{
 /* Proyectos*/
 
 #proyectos{
-  padding: 2rem 2rem 4rem 2rem; /* top, right, bottom, left */
+  padding: 2rem 2rem 1.5rem 2rem; /* top, right, bottom, left */
   position: relative;
 }
 
@@ -644,15 +645,14 @@ article .icono{
   box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/**/
+/*Contacto*/
 
 #contacto {
-  padding: 2rem 2rem 2rem 2rem;
+  padding: 2rem 2rem 1rem 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: auto;
-  margin-bottom: 3rem;
   gap: 1rem;
 }
 
@@ -662,7 +662,7 @@ article .icono{
   border-left: var(--azul-principal) 0.1rem solid;
   border-right: var(--azul-principal) 0.1rem solid;
   border-radius: 2rem;
-  margin: 1.5rem auto;
+  margin: 1.2rem auto;
   padding: 0.5rem;
 }
 
@@ -688,7 +688,7 @@ footer {
   padding: 0.5rem 0;
   width: 100%;
   background-color: var(--gris-fondo);
-  margin-top: 2rem;
+  margin-top: 0.2rem;
 }
 
 footer p {
