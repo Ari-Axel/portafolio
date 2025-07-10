@@ -644,7 +644,7 @@ article .icono{
   box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
-/*Contacto*/
+/**/
 
 #contacto {
   padding: 2rem 2rem 2rem 2rem;
@@ -652,7 +652,6 @@ article .icono{
   justify-content: center;
   flex-direction: column;
   height: auto;
-  margin-top: -1rem
   margin-bottom: 3rem;
   gap: 1rem;
 }
