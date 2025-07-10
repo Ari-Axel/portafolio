@@ -584,7 +584,7 @@ article .icono{
 }
 
 .proyecto-img{
-  margin-top: 2rem;
+  margin-top: 1rem;
   width: 100%;
   height: 400px; /*Altura para esta sección*/
   object-fit: cover;
