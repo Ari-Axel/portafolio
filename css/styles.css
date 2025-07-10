@@ -565,9 +565,9 @@ article .icono{
 }
 
 
-/* Proyectos*/
+/* s*/
 
-#proyectos{
+#s{
   padding: 2rem 2rem 1.5rem 2rem; /* top, right, bottom, left */
   position: relative;
 }
@@ -578,7 +578,7 @@ article .icono{
   padding: 2rem;
 }
 
-.titulo-proyecto{
+.titulo-{
   color: var(--azul-principal);
   margin-top: 0.5rem;
 }
@@ -590,6 +590,7 @@ article .icono{
   object-fit: cover;
   border-radius: 2rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  cursor: pointer;
 }
 
 .centrado {
