@@ -652,6 +652,7 @@ article .icono{
   justify-content: center;
   flex-direction: column;
   height: auto;
+  margin-top: -1rem
   margin-bottom: 3rem;
   gap: 1rem;
 }
