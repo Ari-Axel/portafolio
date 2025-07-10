@@ -60,7 +60,7 @@
 
       <div id="rs-contenedor" class="fade-in-up fade-in-delay-8">
         <img src="img/brand-linkedin.svg" alt="Perfil de LinkedIn" class="icono" onclick="window.open('https://www.linkedin.com/in/ari-axel-oregel-pelaez-bab194288', '_blank')">
-        <img src="img/brand-instagram.svg" alt="Perfil de Instagram" class="icono" onclick="window.open('https://www.instagram.com/ari.axel/?hl=es', '_blank')">      
+        <img src="img/brand-github.svg" alt="Perfil de GitHub" class="icono" onclick="window.open('https://github.com/Ari-Axel', '_blank')">      
       </div>
     </div>
   </section>
@@ -110,7 +110,7 @@
             </article>
             <article><img src="img/brand-javascript.svg" alt="JavaScript" class="icono">
               <h3>JavaScript</h3>
-              <p>Básico</p>
+              <p>Intermedio</p>
             </article>
             <article><img src="img/antenna-bars-5.svg" alt="Power BI" class="icono">
               <h3>Power BI</h3>
@@ -126,7 +126,7 @@
             </article>
             <article><img src="img/brand-adobe.svg" alt="Adobe" class="icono">
               <h3>Adobe</h3>
-              <p>Básico</p>
+              <p>Intermedio</p>
             </article>
             <article><img src="img/brand-cpp.svg" alt="C++" class="icono">
               <h3>C++</h3>
@@ -134,7 +134,7 @@
             </article>
             <article><img src="img/router.svg" alt="CISCO" class="icono">
               <h3>Configuración de tecnología CISCO</h3>
-              <p>Básico</p>
+              <p>Intermedio</p>
             </article>
             <article><img src="img/database.svg" alt="Bases de datos" class="icono">
               <h3>Bases de datos - MySQL, Oracle DB</h3>
@@ -152,7 +152,7 @@
       <div class="contenedor-articulo caja-proyecto">
         <div class="detalles-contenedor color-contenedor">
           <div class="articulo-contenedor">
-            <img src="img/CollagePC's.png" alt="Proyecto de PC" class="proyecto-img">
+            <img src="img/CollagePC's.png" alt="Proyecto de PC" class="proyecto-img" onclick="mostrarModal(this)">
             <h2 class="experiencia-subtitulo titulo-proyecto">Proyectos de PC</h2>
             <p>Cuando existe oportunidad, me dedico a cotizar, armar y configurar PC's desde cero.</p>
             <p>Habilidades:</p>
@@ -169,7 +169,7 @@
 
         <div class="detalles-contenedor color-contenedor">
           <div class="articulo-contenedor">
-            <img src="img/landing-cafeteria.png" alt="Landing cafetería" class="proyecto-img">
+            <img src="img/landing-cafeteria.png" alt="Landing cafetería" class="proyecto-img" onclick="mostrarModal(this)">
             <h2 class="experiencia-subtitulo titulo-proyecto">Landing page para una cafetería</h2>
             <p>Landing Page visual para proyecto universitario con ayuda de un curso, sobre una cafetería local.</p>
             <p>Tecnologías utilizadas:</p>
@@ -218,5 +218,8 @@
   </footer>
 
   <script src="script.js"></script>
+  <div id="modal" class="modal" onclick="cerrarModal()">
+  <img id="modal-img" alt="Imagen ampliada">
+</div>
 </body>
 </html>

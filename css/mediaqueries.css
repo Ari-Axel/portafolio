@@ -57,6 +57,7 @@
   .experiencia-subtitulo {
     font-size: 1.25rem;
     text-align: center;
+    padding: 0.5rem;
   }
 
   .logo {
@@ -139,8 +140,8 @@
   width: 100%;
   max-width: 100%;
   box-sizing: border-box;
-
-  justify-items: center; /* ✅ centra cada artículo */
+  padding: 0.5rem;
+  justify-items: center; 
 }
 
 
@@ -183,6 +184,7 @@
 }
 
 .experiencia {
+  align-items: center;
   order: 1;
   padding: auto;
   margin: auto;
@@ -247,6 +249,24 @@
   max-width: 100%;
 }
 }
+@media (max-width: 600px) {
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.modal img {
+  max-width: 90vw;
+  max-height: 80vh;
+}
+}
 
 @media screen and (max-width: 768px) and (orientation: landscape) {
   #sobre-mi {
@@ -274,6 +294,7 @@
     width: 100%;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   .detalles-contenedor,

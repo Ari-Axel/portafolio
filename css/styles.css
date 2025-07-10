@@ -333,6 +333,7 @@ section {
 
 .boton-color-1, .boton-color-2 {
   border: var(--azul-hover) 0.1rem solid;
+  color: var(--azul-principal);
 }
 
 .boton-color-1:hover, .boton-color-2:hover {
@@ -514,6 +515,7 @@ section {
 
 .experiencia-subtitulo{
   color: #2f4156;
+  padding: 2rem;
 }
 
 #experiencia{
@@ -524,7 +526,7 @@ section {
 .experiencia-subtitulo{
   font-weight: 600;
   font-size: 1.7rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .detalles-experiencia-contenedor{
@@ -572,6 +574,7 @@ article .icono{
 .color-contenedor{
   border: none;
   background: var(--gris-fondo);
+  padding: 2rem;
 }
 
 .titulo-proyecto{
@@ -590,8 +593,55 @@ article .icono{
 .centrado {
   display: flex;
   align-items: center;
-  justify-content: left; /* Alineado a la izquierda */
+  justify-content: center; /* Alineado a la izquierda */
   gap: 2rem;                    /* Espacio razonable entre ícono y texto */
+}
+
+
+/*Agrandar imagenes*/
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes zoomOut {
+  from {
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+}
+
+.modal.closing img {
+  animation: zoomOut 0.3s ease forwards;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal img {
+  animation: zoomIn 0.3s ease forwards;
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 1rem;
+  box-shadow: 0 0 20px rgba(255,255,255,0.2);
 }
 
 /*Contacto*/

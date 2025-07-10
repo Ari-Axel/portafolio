@@ -96,3 +96,21 @@ const observer = new IntersectionObserver(entries => {
 });
 
 secciones.forEach(seccion => observer.observe(seccion));
+
+/*Agrandar Imagenes*/
+function mostrarModal(img) {
+  const modal = document.getElementById("modal");
+  const modalImg = document.getElementById("modal-img");
+  modalImg.src = img.src;
+  modal.classList.remove("closing");
+  modal.style.display = "flex";
+}
+
+function cerrarModal() {
+  const modal = document.getElementById("modal");
+  modal.classList.add("closing");
+  setTimeout(() => {
+    modal.style.display = "none";
+    modal.classList.remove("closing"); 
+  }, 300);
+}
