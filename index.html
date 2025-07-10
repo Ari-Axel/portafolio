@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Ari Oregel</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/mediaqueries.css">
+    <link rel="shortcut icon" href="img/logoAO.png">
+  </head>
+<body>
+  <!-- Menú de escritorio -->
+  <nav id="navegacion-escritorio">
+    <div>
+      <a href="index.html"><img src="img/logoAO.png" alt="Logo" class="logo"></a>
+    </div>
+    <ul class="navegacion-links">
+      <li><a href="#sobre-mi">Sobre mí</a></li>
+      <li><a href="#experiencia">Experiencia</a></li>
+      <li><a href="#proyectos">Proyectos</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- Menú comprimido -->
+  <nav id="c-menu-nav">
+    <a href="index.html"><img src="img/logoAO.png" alt="Logo" class="logo"></a>
+    <div class="c-menu">
+      <div class="c-menu-icono" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <ul class="menu-links">
+        <li><a href="#sobre-mi" onclick="toggleMenu()">Sobre mí</a></li>
+        <li><a href="#experiencia" onclick="toggleMenu()">Experiencia</a></li>
+        <li><a href="#proyectos" onclick="toggleMenu()">Proyectos</a></li>
+        <li><a href="#contacto" onclick="toggleMenu()">Contacto</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section id="perfil" class="fade-in-up fade-in-delay-1">
+    <div class="seccion-foto-contenedor fade-in-up fade-in-delay-2">
+      <img src="img/perfil2.png" alt="Ari Oregel Art - Perfil" id="foto-perfil" class="fade-in-up fade-in-delay-3">
+    </div>
+
+    <div class="seccion-texto fade-in-up fade-in-delay-4">
+      <p class="seccion-texto-p1 fade-in-up fade-in-delay-5">Hola, soy</p>
+      <h1 class="nombre fade-in-up fade-in-delay-6">Ari Axel Oregel Pelaez</h1>
+      <p class="seccion-texto-p2 fade-in-up fade-in-delay-7">
+        <span id="typing" class="typed-text"></span><span class="cursor">|</span>
+      </p>
+
+      <div class="boton-contenedor fade-in-up fade-in-delay-8">
+        <button class="boton boton-color-2" onclick="window.open('recursos/CV-Ari-Oregel.pdf')">Descargar CV</button>
+        <button class="boton boton-color-1" onclick="location.href = '#contacto'">Contacto</button>    
+      </div>
+
+      <div id="rs-contenedor" class="fade-in-up fade-in-delay-8">
+        <img src="img/brand-linkedin.svg" alt="Perfil de LinkedIn" class="icono" onclick="window.open('https://www.linkedin.com/in/ari-axel-oregel-pelaez-bab194288', '_blank')">
+        <img src="img/brand-instagram.svg" alt="Perfil de Instagram" class="icono" onclick="window.open('https://www.instagram.com/ari.axel/?hl=es', '_blank')">      
+      </div>
+    </div>
+  </section>
+  <section id="sobre-mi" class="hidden-scroll">
+    <p class="seccion-texto-p1"> Para saber más </p>
+    <p class="titulo"> Sobre mí </p>
+    <div class="seccion-contenedor">
+      <div class="seccion-foto-contenedor">
+        <img src="img/Quiza6.png" alt="Foto de perfil." class="foto-sobre-mi">
+      </div>
+      <div class="contenedores-sobre-mi">
+        <div class="detalles-contenedor experiencia">
+          <img src="img/file-certificate.svg" alt="Icono de Experiencia" class="icono">
+          <h3 class="seccion-texto-p2"> Experiencia </h3>
+          <p> ● 6 meses <br /> Embajador Financiero. - BBVA. </p>
+          <p> ● 2 años, 2 meses <br /> Asesor de ventas - PegaGrup. </p>
+        </div>
+        <div class="detalles-contenedor educacion">
+          <img src="img/school.svg" alt="Icono de Educación" class="icono">
+          <h3 class="seccion-texto-p2"> Educación <br /></h3>
+          <p>  ● Ingeniería de software y redes. <br /> Universidad Tecnológica de México </p>
+          <p>  ● Bachillerato tecnológico en informática de gestión. <br /> Centro de aprendizaje tecnológico empresarial Tecámac </p>
+        </div>
+        <div class="texto-contenedor sobre-mi-texto horizontal">
+          <p>Egresado de la licenciatura en Ingeniería de software y redes, en busca de una oportunidad profesional en el área de tecnología, dispuesto a fortalecer conocimientos y aportar crecimiento de
+          empresas. Responsable, perseverante, honesto, con disposición y disponibilidad inmediata.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="experiencia" class="hidden-scroll">
+    <p class="seccion-texto-p1"> Conoce más de mi </p>
+    <p class="titulo"> Experiencia </p>
+    <div class="detalles-experiencia-contenedor">
+      <div class="contenedores-sobre-mi">
+        <div class="detalles-contenedor">
+          <h2 class="experiencia-subtitulo">Herramientas</h2>
+          <div class="contenedor-articulo  articulos">
+            <article>
+              <img src="img/brand-html5.svg" alt="HTML" class="icono">
+              <h3>HTML</h3>
+              <p>Experimentado</p>
+            </article>
+            <article><img src="img/brand-css3.svg" alt="CSS" class="icono">
+              <h3>CSS</h3>
+              <p>Experimentado</p>
+            </article>
+            <article><img src="img/brand-javascript.svg" alt="JavaScript" class="icono">
+              <h3>JavaScript</h3>
+              <p>Básico</p>
+            </article>
+            <article><img src="img/antenna-bars-5.svg" alt="Power BI" class="icono">
+              <h3>Power BI</h3>
+              <p>Intermedio</p>
+            </article>
+            <article><img src="img/brand-office.svg" alt="Microsoft" class="icono">
+              <h3>Microsoft Office</h3>
+              <p>Experimentado</p>
+            </article>            
+            <article><img src="img/hierarchy.svg" alt="Ensamblaje" class="icono">
+              <h3>Habilidades técnicas</h3>
+              <p>Intermedio</p>
+            </article>
+            <article><img src="img/brand-adobe.svg" alt="Adobe" class="icono">
+              <h3>Adobe</h3>
+              <p>Básico</p>
+            </article>
+            <article><img src="img/brand-cpp.svg" alt="C++" class="icono">
+              <h3>C++</h3>
+              <p>Intermedio</p>
+            </article>
+            <article><img src="img/router.svg" alt="CISCO" class="icono">
+              <h3>Configuración de tecnología CISCO</h3>
+              <p>Básico</p>
+            </article>
+            <article><img src="img/database.svg" alt="Bases de datos" class="icono">
+              <h3>Bases de datos - MySQL, Oracle DB</h3>
+              <p>Intermedio</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="proyectos" class="hidden-scroll">
+    <p class="seccion-texto-p1"> Sobre mis recientes </p>
+    <h1 class="titulo"> Proyectos </h1>
+    <div class="experiencia-detalles-contenedor">
+      <div class="contenedor-articulo caja-proyecto">
+        <div class="detalles-contenedor color-contenedor">
+          <div class="articulo-contenedor">
+            <img src="img/CollagePC's.png" alt="Proyecto de PC" class="proyecto-img">
+            <h2 class="experiencia-subtitulo titulo-proyecto">Proyectos de PC</h2>
+            <p>Cuando existe oportunidad, me dedico a cotizar, armar y configurar PC's desde cero.</p>
+            <p>Habilidades:</p>
+            <div class="centrado">
+              <div><h3>Conocimientos técnicos</h3></div>
+              <article><img src="img/hierarchy.svg" alt="Icono-verificado" class="icono"></article>
+            </div> 
+            <p>Febrero de 2022 - Actualidad.</p>
+            <div class="boton-contenedor">
+              <button class="boton boton-color-1 proyecto-boton" onclick="location.href='#contacto'">Contacto</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="detalles-contenedor color-contenedor">
+          <div class="articulo-contenedor">
+            <img src="img/landing-cafeteria.png" alt="Landing cafetería" class="proyecto-img">
+            <h2 class="experiencia-subtitulo titulo-proyecto">Landing page para una cafetería</h2>
+            <p>Landing Page visual para proyecto universitario con ayuda de un curso, sobre una cafetería local.</p>
+            <p>Tecnologías utilizadas:</p>
+            <div class="centrado">
+              <div><h3>HTML</h3></div>
+              <article><img src="img/brand-html5.svg" alt="HTML" class="icono"></article>
+              <div><h3>CSS</h3></div>
+              <article><img src="img/brand-css3.svg" alt="CSS" class="icono"></article>
+            </div>
+            <p>Fecha: Junio - 2023</p>
+            <div class="boton-contenedor">
+              <button class="boton boton-color-2" onclick="window.open('https://github.com')">GitHub</button>
+              <button class="boton boton-color-1" onclick="window.open('recursos/Pagina Cafetería/index.html')">Live Demo</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contacto" class="hidden-scroll">
+    <p class="seccion-texto-p1">Para estar más en</p>
+    <h1 class="titulo">Contacto</h1>
+    <div class="contacto-info-superior-contenedor">
+      <div class="contacto-info-contenedor">
+        <a href="mailto:ari.axel18@hotmail.com"><img src="img/mail.svg" alt="E-mail" class="icono"></a>
+        <p><a href="mailto:ari.axel18@hotmail.com">ari.axel18@hotmail.com</a></p>
+      </div>
+      <div class="contacto-info-contenedor">
+        <a href="https://www.linkedin.com/in/ari-axel-oregel-pelaez-bab194288"><img src="img/brand-linkedin.svg" alt="LinkedIn" class="icono"></a>
+        <p><a href="https://www.linkedin.com/in/ari-axel-oregel-pelaez-bab194288">Perfil de LinkedIn</a></p>
+      </div>
+    </div>
+  </section>
+  <footer class="hidden-scroll">
+    <nav>
+      <div class="navegacion-links-contenedor">
+        <ul class="navegacion-links">
+          <li><a href="#sobre-mi">Sobre mí</a></li>
+          <li><a href="#experiencia">Experiencia</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul> 
+      </div>
+    </nav>
+    <p>Copyright &#169; 2025 Ari Oregel. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
