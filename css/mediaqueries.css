@@ -219,7 +219,7 @@
     font-size: 1.1rem;
   }
   #proyectos .titulo {
-    margin-bottom: -4.5rem; /* Reduce espacio debajo del título "Proyectos" */
+    margin-bottom: -3.5rem; /* Reduce espacio debajo del título "Proyectos" */
   }
   #proyectos{
     margin-top: 2rem;
