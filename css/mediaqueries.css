@@ -584,7 +584,7 @@
   }
 }
 
-@media screen and (max-width: 900px) and (orientation: landscape){
+@media screen and (min-width: 430px) and (max-width: 1180px) and (orientation: landscape){
 
   #navegacion-escritorio {
     display: none;
