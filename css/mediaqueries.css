@@ -593,6 +593,7 @@
   #c-menu-nav {
     display: flex;
     padding: 0 2rem;
+    margin-top: 1.5rem;
   }
 
   .navegacion-links {
