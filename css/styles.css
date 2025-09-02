@@ -531,6 +531,7 @@ section {
 }
 
 .detalles-experiencia-contenedor{
+  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -552,8 +553,8 @@ article {
   flex: 0 1 auto;
   max-width: 300px;
   width: fit-content;
-  white-space: normal; /* permite salto, pero... */
-  word-break: keep-all; /* ...evita cortar palabras */
+  white-space: normal;
+  word-break: keep-all; 
 }
 
 article .icono{
