@@ -531,7 +531,7 @@ section {
 }
 
 .detalles-experiencia-contenedor{
-  margin: 2rem;
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -707,4 +707,5 @@ footer .navegacion-links {
 
 footer .navegacion-links-contenedor {
   margin-bottom: 0.2rem;
+
 }
