@@ -531,7 +531,7 @@ section {
 }
 
 .detalles-experiencia-contenedor{
-  margin-top: 2rem;
+  margin: 2rem;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -565,8 +565,22 @@ article .icono{
   border-left: none;
 }
 
+.articulo-contenedor {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
 
-/* s*/
+.boton-contenedor {
+  margin-top: auto;
+  display: flex;
+  justify-content: center; /* o flex-end si prefieres alinearlos a la derecha */
+  gap: 1rem;
+}
+
+
+/*S*/
 
 #s{
   padding: 2rem 2rem 1.5rem 2rem; /* top, right, bottom, left */
@@ -707,5 +721,4 @@ footer .navegacion-links {
 
 footer .navegacion-links-contenedor {
   margin-bottom: 0.2rem;
-
 }
