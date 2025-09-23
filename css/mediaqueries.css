@@ -32,10 +32,6 @@
     filter: blur(0) brightness(1);
   }
 
-  section {
-    margin: 0 1rem;
-  }
-
   .seccion-texto {
     text-align: center;
     padding: 0 1rem;
@@ -902,3 +898,4 @@
   }
 
 }
+
