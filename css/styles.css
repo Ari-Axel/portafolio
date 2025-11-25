@@ -606,6 +606,8 @@ article .icono{
   border-radius: 2rem;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   cursor: pointer;
+  text-align: center;
+  justify-content: center;
 }
 
 .centrado {
