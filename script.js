@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Detección inicial
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -162,8 +163,10 @@ window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scroll hacia abajo - Ocultar
         btn.classList.add('hidden');
     } else {
+        // Scroll hacia arriba - Mostrar
         btn.classList.remove('hidden');
     }
     
@@ -171,10 +174,16 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 document.addEventListener('DOMContentLoaded', () => {
-    const enlaces = document.querySelectorAll('a:not(.icono-link)');
+    const enlaces = document.querySelectorAll('a');
 
     enlaces.forEach(link => {
-        if (link.querySelector('img.icono')) return;
+        const esLogo = link.classList.contains('logo') || link.querySelector('.logo');
+        
+        const esIcono = link.querySelector('img.icono') || link.classList.contains('btn-toggle');
+
+        if (esLogo || esIcono) {
+            return; 
+        }
 
         const linea = document.createElement('div');
         linea.classList.add('linea-js');
@@ -189,4 +198,3 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
-
