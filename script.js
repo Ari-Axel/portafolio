@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // Rutas de tus imágenes
-    const moonOutline = "/img/moon-outline.svg";
-    const moonFilled = "/img/moon-filled.svg";
+    const moonOutline = "img/moon-outline.svg";
+    const moonFilled = "img/moon-filled.svg";
 
     const updateUI = (isDark) => {
         if (isDark) {
@@ -135,7 +135,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Detección inicial
     const savedTheme = localStorage.getItem('theme');
     const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -163,10 +162,8 @@ window.addEventListener('scroll', () => {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
     if (scrollTop > lastScrollTop && scrollTop > 100) {
-        // Scroll hacia abajo - Ocultar
         btn.classList.add('hidden');
     } else {
-        // Scroll hacia arriba - Mostrar
         btn.classList.remove('hidden');
     }
     
@@ -174,12 +171,9 @@ window.addEventListener('scroll', () => {
 }, { passive: true });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Seleccionamos todos los enlaces, pero EXCLUIMOS los que tienen iconos
-    // o los que tú decidas añadiendo clases a la lista del :not()
     const enlaces = document.querySelectorAll('a:not(.icono-link)');
 
     enlaces.forEach(link => {
-        // Verificación extra: Si el enlace contiene una imagen con clase "icono", no le pongas línea
         if (link.querySelector('img.icono')) return;
 
         const linea = document.createElement('div');
@@ -195,3 +189,4 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
