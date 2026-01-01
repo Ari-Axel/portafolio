@@ -114,3 +114,84 @@ function cerrarModal() {
     modal.classList.remove("closing"); 
   }, 300);
 }
+
+/*Modo Oscuro*/
+document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.getElementById('dark-mode-toggle');
+    const iconImg = document.getElementById('toggle-icon');
+    const body = document.body;
+
+    // Rutas de tus imágenes
+    const moonOutline = "/img/moon-outline.svg";
+    const moonFilled = "/img/moon-filled.svg";
+
+    const updateUI = (isDark) => {
+        if (isDark) {
+            body.classList.add('dark');
+            iconImg.src = moonFilled; // Cambia a luna llena
+        } else {
+            body.classList.remove('dark');
+            iconImg.src = moonOutline; // Cambia a luna contorno
+        }
+    };
+
+    // Detección inicial
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+        updateUI(true);
+    } else {
+        updateUI(false);
+    }
+
+    if (btn) {
+        btn.addEventListener('click', () => {
+            const isDark = !body.classList.contains('dark');
+            updateUI(isDark);
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        });
+    }
+});
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('dark-mode-toggle');
+    if (!btn) return;
+
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+        // Scroll hacia abajo - Ocultar
+        btn.classList.add('hidden');
+    } else {
+        // Scroll hacia arriba - Mostrar
+        btn.classList.remove('hidden');
+    }
+    
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; 
+}, { passive: true });
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleccionamos todos los enlaces, pero EXCLUIMOS los que tienen iconos
+    // o los que tú decidas añadiendo clases a la lista del :not()
+    const enlaces = document.querySelectorAll('a:not(.icono-link)');
+
+    enlaces.forEach(link => {
+        // Verificación extra: Si el enlace contiene una imagen con clase "icono", no le pongas línea
+        if (link.querySelector('img.icono')) return;
+
+        const linea = document.createElement('div');
+        linea.classList.add('linea-js');
+        link.appendChild(linea);
+
+        link.addEventListener('mouseenter', () => {
+            linea.style.width = '100%';
+        });
+
+        link.addEventListener('mouseleave', () => {
+            linea.style.width = '0';
+        });
+    });
+});

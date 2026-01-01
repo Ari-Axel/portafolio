@@ -613,11 +613,21 @@ body {
 }
 }
 
-
-
-
 @media screen and (max-width: 414px) { 
     footer .navegacion-links li a {
         font-size: 0.9rem; 
+    }
+}
+/*Modo oscuro boton movil*/
+@media (max-width: 600px) {
+    .btn-toggle {
+        bottom: 20px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+    }
+    .icono-toggle {
+        width: 20px;
+        height: 20px;
     }
 }
