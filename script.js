@@ -115,87 +115,6 @@ function cerrarModal() {
   }, 300);
 }
 
-/*Proceso UX*/
-
-const procesosUX = {
-  hch: {
-    proyecto: "Inmobiliaria HCH",
-    pasos: [
-      { titulo: "Problema", texto: "El cliente necesitaba un sitio que transmitiera confianza a compradores y le ayudara a mostrar sus propiedades disponibles." },
-      { titulo: "Exploración", texto: "En una llamada con el cliente recopilé qué propiedades quería destacar, su público objetivo y el tono de marca que buscaba." },
-      { titulo: "Requerimientos", texto: "Traduje lo conversado en requisitos funcionales (catálogo de propiedades, botón de agendar visita), no funcionales (carga rápida, responsive) y de diseño (paleta oscura y dorada)." },
-      { titulo: "Prototipado", texto: "Hice un boceto a mano de la estructura antes de programar y lo compartí con el cliente para validar el orden de la información." },
-      { titulo: "Iteración y resultado", texto: "Con feedback semanal fui ajustando textos, colores y secciones hasta llegar a una versión final aprobada por el cliente." }
-    ]
-  },
-  quinta26: {
-    proyecto: "Quinta 26",
-    pasos: [
-      { titulo: "Problema", texto: "\"Quinta 26\" no tenía presencia digital y perdía contactos que buscaban cotizar por redes sociales." },
-      { titulo: "Exploración", texto: "Conversé con el cliente sobre los tipos de eventos que ofrece y qué información buscan más los interesados antes de cotizar." },
-      { titulo: "Requerimientos", texto: "Definí requisitos funcionales (formulario de cotización, galería de eventos), de diseño (tono cálido y visual) y no funcionales (uso cómodo desde celular)." },
-      { titulo: "Prototipado", texto: "Armé una maqueta sencilla y la compartí con el cliente para validar el orden de las secciones antes de construir la landing final." },
-      { titulo: "Iteración y resultado", texto: "Ajusté textos e imágenes en varias rondas hasta un sitio que el cliente pudiera usar directamente para cerrar cotizaciones." }
-    ]
-  },
-  cafeteria: {
-    proyecto: "Landing cafetería",
-    pasos: [
-      { titulo: "Problema", texto: "Proyecto universitario para dar presencia digital a una cafetería local que no tenía sitio web." },
-      { titulo: "Exploración", texto: "Investigué el menú y la identidad visual del negocio junto con los criterios del curso para definir el alcance del sitio." },
-      { titulo: "Requerimientos", texto: "Definí como requisitos funcionales el menú y la ubicación, y como requisitos de diseño una estética cálida acorde a una cafetería." },
-      { titulo: "Prototipado", texto: "Bocetó la landing antes de programarla, validando la estructura con los criterios de la materia." },
-      { titulo: "Iteración y resultado", texto: "Ajusté el diseño en varias rondas hasta entregar una landing funcional y visualmente coherente." }
-    ]
-  }
-};
-
-document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.proceso-slider').forEach(contenedor => {
-    const datos = procesosUX[contenedor.dataset.proceso];
-    if (!datos) return;
-
-    const pistas = document.createElement('div');
-    pistas.className = 'proceso-slider-pistas';
-
-    datos.pasos.forEach(paso => {
-      const pasoEl = document.createElement('div');
-      pasoEl.className = 'proceso-slider-paso';
-      pasoEl.innerHTML = `<p class="proceso-slider-paso-titulo">${paso.titulo}</p><p class="proceso-slider-paso-texto">${paso.texto}</p>`;
-      pistas.appendChild(pasoEl);
-    });
-
-    const puntosEl = document.createElement('div');
-    puntosEl.className = 'proceso-slider-puntos';
-
-    datos.pasos.forEach((_, i) => {
-      const punto = document.createElement('span');
-      if (i === 0) punto.classList.add('activo');
-      punto.addEventListener('click', () => {
-        pistas.scrollTo({ left: i * pistas.clientWidth, behavior: 'smooth' });
-      });
-      puntosEl.appendChild(punto);
-    });
-
-    contenedor.appendChild(pistas);
-    contenedor.appendChild(puntosEl);
-
-    pistas.addEventListener('wheel', (evento) => {
-      if (Math.abs(evento.deltaY) > Math.abs(evento.deltaX)) {
-        evento.preventDefault();
-        pistas.scrollBy({ left: evento.deltaY, behavior: 'smooth' });
-      }
-    }, { passive: false });
-
-    pistas.addEventListener('scroll', () => {
-      const indice = Math.round(pistas.scrollLeft / pistas.clientWidth);
-      puntosEl.querySelectorAll('span').forEach((punto, i) => {
-        punto.classList.toggle('activo', i === indice);
-      });
-    });
-  });
-});
-
 /*Modo Oscuro*/
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('dark-mode-toggle');
@@ -203,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
 
     // Rutas de tus imágenes
-    const moonOutline = "img/moon-outline.svg";
-    const moonFilled = "img/moon-filled.svg";
+    const moonOutline = "./img/moon-outline.svg";
+    const moonFilled = "./img/moon-filled.svg";
 
     const updateUI = (isDark) => {
         if (isDark) {
