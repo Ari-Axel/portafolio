@@ -698,31 +698,52 @@ article .icono{
 /*Proceso UX*/
 
 .proceso-slider {
-  min-height: 5.2rem;
   margin: 0.6rem 0;
-  text-align: center;
 }
 
-.proceso-slider-titulo {
+.proceso-slider-pistas {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  height: 6.5rem;
+}
+
+.proceso-slider-pistas::-webkit-scrollbar {
+  display: none;
+}
+
+.proceso-slider-paso {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  padding: 0 0.2rem;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.proceso-slider-paso-titulo {
   font-weight: 600;
   font-size: 0.9rem;
   color: var(--azul-principal);
   margin-bottom: 0.3rem;
-  transition: opacity 0.4s ease;
 }
 
-.proceso-slider-texto {
-  font-size: 0.88rem;
+.proceso-slider-paso-texto {
+  font-size: 0.85rem;
   color: #555;
-  line-height: 1.5;
-  transition: opacity 0.4s ease;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .proceso-slider-puntos {
   display: flex;
   justify-content: center;
   gap: 0.4rem;
-  margin-top: 0.6rem;
+  margin-top: 0.5rem;
 }
 
 .proceso-slider-puntos span {
@@ -737,7 +758,7 @@ article .icono{
   background: var(--azul-principal);
 }
 
-body.dark .proceso-slider-texto {
+body.dark .proceso-slider-paso-texto {
   color: #cbd9e6;
 }
 
