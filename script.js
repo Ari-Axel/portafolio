@@ -155,41 +155,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const datos = procesosUX[contenedor.dataset.proceso];
     if (!datos) return;
 
-    const tituloEl = contenedor.querySelector('.proceso-slider-titulo');
-    const textoEl = contenedor.querySelector('.proceso-slider-texto');
-    const puntosEl = contenedor.querySelector('.proceso-slider-puntos');
+    const pistas = document.createElement('div');
+    pistas.className = 'proceso-slider-pistas';
 
-    let paso = 0;
+    datos.pasos.forEach(paso => {
+      const pasoEl = document.createElement('div');
+      pasoEl.className = 'proceso-slider-paso';
+      pasoEl.innerHTML = `<p class="proceso-slider-paso-titulo">${paso.titulo}</p><p class="proceso-slider-paso-texto">${paso.texto}</p>`;
+      pistas.appendChild(pasoEl);
+    });
+
+    const puntosEl = document.createElement('div');
+    puntosEl.className = 'proceso-slider-puntos';
 
     datos.pasos.forEach((_, i) => {
       const punto = document.createElement('span');
       if (i === 0) punto.classList.add('activo');
       punto.addEventListener('click', () => {
-        paso = i;
-        mostrarPaso();
+        pistas.scrollTo({ left: i * pistas.clientWidth, behavior: 'smooth' });
       });
       puntosEl.appendChild(punto);
     });
 
-    function mostrarPaso() {
-      tituloEl.style.opacity = 0;
-      textoEl.style.opacity = 0;
-      setTimeout(() => {
-        tituloEl.textContent = datos.pasos[paso].titulo;
-        textoEl.textContent = datos.pasos[paso].texto;
-        puntosEl.querySelectorAll('span').forEach((punto, i) => {
-          punto.classList.toggle('activo', i === paso);
-        });
-        tituloEl.style.opacity = 1;
-        textoEl.style.opacity = 1;
-      }, 300);
-    }
+    contenedor.appendChild(pistas);
+    contenedor.appendChild(puntosEl);
 
-    mostrarPaso();
-    setInterval(() => {
-      paso = (paso + 1) % datos.pasos.length;
-      mostrarPaso();
-    }, 4000);
+    pistas.addEventListener('wheel', (evento) => {
+      if (Math.abs(evento.deltaY) > Math.abs(evento.deltaX)) {
+        evento.preventDefault();
+        pistas.scrollBy({ left: evento.deltaY, behavior: 'smooth' });
+      }
+    }, { passive: false });
+
+    pistas.addEventListener('scroll', () => {
+      const indice = Math.round(pistas.scrollLeft / pistas.clientWidth);
+      puntosEl.querySelectorAll('span').forEach((punto, i) => {
+        punto.classList.toggle('activo', i === indice);
+      });
+    });
   });
 });
 
