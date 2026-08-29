@@ -121,9 +121,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const iconImg = document.getElementById('toggle-icon');
     const body = document.body;
 
-    // Rutas de tus imágenes
-    const moonOutline = "./img/moon-outline.svg";
-    const moonFilled = "./img/moon-filled.svg";
+    const rutaBase = window.location.pathname.includes("/recursos/") ? "../" : "./";
+
+    const moonOutline = `${rutaBase}img/moon-outline.svg`;
+    const moonFilled = `${rutaBase}img/moon-filled.svg`;
 
     const updateUI = (isDark) => {
         if (isDark) {
