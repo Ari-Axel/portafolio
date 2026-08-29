@@ -441,19 +441,27 @@ body {
 /* ========================================================= */
 @media screen and (min-width: 1101px) {
     #proyectos .contenedor-articulo {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 2.5rem; 
         width: 100%;
-        max-width: 1200px;
+        max-width: 1300px;
         margin: 0 auto;
-        justify-content: center; 
+    }
+    #proyectos .detalles-contenedor {
+        flex: 1 1 360px;
+        min-width: 300px;
+        max-width: 400px;
     }
     #proyectos .proyecto-img {
-        height: 300px; 
         width: 100%; 
+        aspect-ratio: 4 / 3;
+        height: auto;
         display: block;
         margin: 0 auto;
+        object-fit: cover;
     }
 }
 
@@ -510,14 +518,6 @@ body {
     .boton-contenedor {
         flex-wrap: wrap !important;
         gap: 0.5rem;
-    }
-    .proceso-contenido {
-        padding: 2rem 1.2rem 1.5rem 1.2rem;
-        width: 88%;
-    }
-    .proceso-texto {
-        font-size: 0.9rem;
-        min-height: 6rem;
     }
 }
 
