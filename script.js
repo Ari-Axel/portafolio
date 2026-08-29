@@ -115,6 +115,98 @@ function cerrarModal() {
   }, 300);
 }
 
+/*Proceso UX*/
+
+const procesosUX = {
+  hch: {
+    proyecto: "Inmobiliaria HCH",
+    pasos: [
+      { titulo: "Problema", texto: "El cliente necesitaba un sitio que transmitiera confianza a compradores y le ayudara a mostrar sus propiedades disponibles." },
+      { titulo: "Exploración", texto: "En una llamada con el cliente recopilé qué propiedades quería destacar, su público objetivo y el tono de marca que buscaba." },
+      { titulo: "Requerimientos", texto: "Traduje lo conversado en requisitos funcionales (catálogo de propiedades, botón de agendar visita), no funcionales (carga rápida, responsive) y de diseño (paleta oscura y dorada)." },
+      { titulo: "Prototipado", texto: "Hice un boceto a mano de la estructura antes de programar y lo compartí con el cliente para validar el orden de la información." },
+      { titulo: "Iteración y resultado", texto: "Con feedback semanal fui ajustando textos, colores y secciones hasta llegar a una versión final aprobada por el cliente." }
+    ]
+  },
+  quinta26: {
+    proyecto: "Quinta 26",
+    pasos: [
+      { titulo: "Problema", texto: "\"Quinta 26\" no tenía presencia digital y perdía contactos que buscaban cotizar por redes sociales." },
+      { titulo: "Exploración", texto: "Conversé con el cliente sobre los tipos de eventos que ofrece y qué información buscan más los interesados antes de cotizar." },
+      { titulo: "Requerimientos", texto: "Definí requisitos funcionales (formulario de cotización, galería de eventos), de diseño (tono cálido y visual) y no funcionales (uso cómodo desde celular)." },
+      { titulo: "Prototipado", texto: "Armé una maqueta sencilla y la compartí con el cliente para validar el orden de las secciones antes de construir la landing final." },
+      { titulo: "Iteración y resultado", texto: "Ajusté textos e imágenes en varias rondas hasta un sitio que el cliente pudiera usar directamente para cerrar cotizaciones." }
+    ]
+  },
+  cafeteria: {
+    proyecto: "Landing cafetería",
+    pasos: [
+      { titulo: "Problema", texto: "Proyecto universitario para dar presencia digital a una cafetería local que no tenía sitio web." },
+      { titulo: "Exploración", texto: "Investigué el menú y la identidad visual del negocio junto con los criterios del curso para definir el alcance del sitio." },
+      { titulo: "Requerimientos", texto: "Definí como requisitos funcionales el menú y la ubicación, y como requisitos de diseño una estética cálida acorde a una cafetería." },
+      { titulo: "Prototipado", texto: "Bocetó la landing antes de programarla, validando la estructura con los criterios de la materia." },
+      { titulo: "Iteración y resultado", texto: "Ajusté el diseño en varias rondas hasta entregar una landing funcional y visualmente coherente." }
+    ]
+  }
+};
+
+let procesoActual = null;
+let pasoActual = 0;
+
+function renderPaso() {
+  if (!procesoActual) return;
+  const paso = procesoActual.pasos[pasoActual];
+  document.getElementById('proceso-proyecto').textContent = procesoActual.proyecto;
+  document.getElementById('proceso-titulo').textContent = paso.titulo;
+  document.getElementById('proceso-texto').textContent = paso.texto;
+  document.getElementById('proceso-contador').textContent = `${pasoActual + 1} / ${procesoActual.pasos.length}`;
+  document.querySelectorAll('.proceso-punto').forEach((punto, i) => {
+    punto.classList.toggle('activo', i === pasoActual);
+  });
+}
+
+function abrirProceso(id) {
+  procesoActual = procesosUX[id];
+  if (!procesoActual) return;
+  pasoActual = 0;
+  renderPaso();
+  document.getElementById('proceso-modal').style.display = 'flex';
+}
+
+function cerrarProceso() {
+  document.getElementById('proceso-modal').style.display = 'none';
+}
+
+function pasoSiguiente() {
+  if (!procesoActual) return;
+  pasoActual = (pasoActual + 1) % procesoActual.pasos.length;
+  renderPaso();
+}
+
+function pasoAnterior() {
+  if (!procesoActual) return;
+  pasoActual = (pasoActual - 1 + procesoActual.pasos.length) % procesoActual.pasos.length;
+  renderPaso();
+}
+
+function irAPaso(indice) {
+  if (!procesoActual) return;
+  pasoActual = indice;
+  renderPaso();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.proceso-rotar').forEach(elemento => {
+    const frases = JSON.parse(elemento.dataset.frases);
+    let indice = 0;
+    elemento.textContent = frases[0];
+    setInterval(() => {
+      indice = (indice + 1) % frases.length;
+      elemento.textContent = frases[indice];
+    }, 2500);
+  });
+});
+
 /*Modo Oscuro*/
 document.addEventListener('DOMContentLoaded', () => {
     const btn = document.getElementById('dark-mode-toggle');
