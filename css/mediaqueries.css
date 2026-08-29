@@ -630,3 +630,34 @@ body {
         height: 20px;
     }
 }
+
+@media screen and (max-width: 768px) {
+  .experiencia-detalles-contenedor, 
+  .caja-proyecto {
+    width: 100%;
+    padding: 0 1rem;
+    box-sizing: border-box;
+  }
+
+  .caja-proyecto .detalles-contenedor.color-contenedor {
+    width: 100% !important;
+    margin: 0 0 2rem 0 !important;
+    padding: 1.5rem 1rem !important;
+    box-sizing: border-box;
+  }
+
+
+  .caja-proyecto .boton-contenedor {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+    align-items: stretch;
+  }
+
+  .caja-proyecto .boton-contenedor .boton,
+  .caja-proyecto .boton-contenedor .proyecto-boton {
+    width: 100% !important;
+    margin: 0 !important;
+  }
+}
