@@ -150,60 +150,46 @@ const procesosUX = {
   }
 };
 
-let procesoActual = null;
-let pasoActual = 0;
-
-function renderPaso() {
-  if (!procesoActual) return;
-  const paso = procesoActual.pasos[pasoActual];
-  document.getElementById('proceso-proyecto').textContent = procesoActual.proyecto;
-  document.getElementById('proceso-titulo').textContent = paso.titulo;
-  document.getElementById('proceso-texto').textContent = paso.texto;
-  document.getElementById('proceso-contador').textContent = `${pasoActual + 1} / ${procesoActual.pasos.length}`;
-  document.querySelectorAll('.proceso-punto').forEach((punto, i) => {
-    punto.classList.toggle('activo', i === pasoActual);
-  });
-}
-
-function abrirProceso(id) {
-  procesoActual = procesosUX[id];
-  if (!procesoActual) return;
-  pasoActual = 0;
-  renderPaso();
-  document.getElementById('proceso-modal').style.display = 'flex';
-}
-
-function cerrarProceso() {
-  document.getElementById('proceso-modal').style.display = 'none';
-}
-
-function pasoSiguiente() {
-  if (!procesoActual) return;
-  pasoActual = (pasoActual + 1) % procesoActual.pasos.length;
-  renderPaso();
-}
-
-function pasoAnterior() {
-  if (!procesoActual) return;
-  pasoActual = (pasoActual - 1 + procesoActual.pasos.length) % procesoActual.pasos.length;
-  renderPaso();
-}
-
-function irAPaso(indice) {
-  if (!procesoActual) return;
-  pasoActual = indice;
-  renderPaso();
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.proceso-rotar').forEach(elemento => {
-    const frases = JSON.parse(elemento.dataset.frases);
-    let indice = 0;
-    elemento.textContent = frases[0];
+  document.querySelectorAll('.proceso-slider').forEach(contenedor => {
+    const datos = procesosUX[contenedor.dataset.proceso];
+    if (!datos) return;
+
+    const tituloEl = contenedor.querySelector('.proceso-slider-titulo');
+    const textoEl = contenedor.querySelector('.proceso-slider-texto');
+    const puntosEl = contenedor.querySelector('.proceso-slider-puntos');
+
+    let paso = 0;
+
+    datos.pasos.forEach((_, i) => {
+      const punto = document.createElement('span');
+      if (i === 0) punto.classList.add('activo');
+      punto.addEventListener('click', () => {
+        paso = i;
+        mostrarPaso();
+      });
+      puntosEl.appendChild(punto);
+    });
+
+    function mostrarPaso() {
+      tituloEl.style.opacity = 0;
+      textoEl.style.opacity = 0;
+      setTimeout(() => {
+        tituloEl.textContent = datos.pasos[paso].titulo;
+        textoEl.textContent = datos.pasos[paso].texto;
+        puntosEl.querySelectorAll('span').forEach((punto, i) => {
+          punto.classList.toggle('activo', i === paso);
+        });
+        tituloEl.style.opacity = 1;
+        textoEl.style.opacity = 1;
+      }, 300);
+    }
+
+    mostrarPaso();
     setInterval(() => {
-      indice = (indice + 1) % frases.length;
-      elemento.textContent = frases[indice];
-    }, 2500);
+      paso = (paso + 1) % datos.pasos.length;
+      mostrarPaso();
+    }, 4000);
   });
 });
 

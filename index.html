@@ -180,8 +180,11 @@
               <article><img src="img/brand-css3.svg" alt="CSS" class="icono"></article>
               <article><img src="img/brand-javascript.svg" alt="JavaScript" class="icono"></article>
             </div>
-            <p class="proceso-teaser"><span class="proceso-rotar" data-frases='["🔍 Llamada de requerimientos","✏️ Prototipo a mano","🔄 Feedback semanal"]'></span></p>
-            <p class="ver-proceso" onclick="abrirProceso('hch')">Ver proceso de diseño →</p>
+            <div class="proceso-slider" data-proceso="hch">
+              <p class="proceso-slider-titulo"></p>
+              <p class="proceso-slider-texto"></p>
+              <div class="proceso-slider-puntos"></div>
+            </div>
             <p>Fehca del proyecto:</p>
             <p>Agosto - 2026</p>
             <div class="boton-contenedor">
@@ -203,8 +206,11 @@
               <article><img src="img/brand-css3.svg" alt="CSS" class="icono"></article>
               <article><img src="img/brand-javascript.svg" alt="JavaScript" class="icono"></article>
             </div>
-            <p class="proceso-teaser"><span class="proceso-rotar" data-frases='["🔍 Conversación con el cliente","✏️ Maqueta simple","🔄 Ajustes por rondas"]'></span></p>
-            <p class="ver-proceso" onclick="abrirProceso('quinta26')">Ver proceso de diseño →</p>
+            <div class="proceso-slider" data-proceso="quinta26">
+              <p class="proceso-slider-titulo"></p>
+              <p class="proceso-slider-texto"></p>
+              <div class="proceso-slider-puntos"></div>
+            </div>
             <p>Fehca del proyecto:</p>
             <p>Septiembre - 2025</p>
             <div class="boton-contenedor">
@@ -244,8 +250,11 @@
               <div><h3>CSS</h3></div>
               <article><img src="img/brand-css3.svg" alt="CSS" class="icono"></article>
             </div>
-            <p class="proceso-teaser"><span class="proceso-rotar" data-frases='["🔍 Investigación de marca","✏️ Boceto de landing","🔄 Iteración con el curso"]'></span></p>
-            <p class="ver-proceso" onclick="abrirProceso('cafeteria')">Ver proceso de diseño →</p>
+            <div class="proceso-slider" data-proceso="cafeteria">
+              <p class="proceso-slider-titulo"></p>
+              <p class="proceso-slider-texto"></p>
+              <div class="proceso-slider-puntos"></div>
+            </div>
             <p>Fehca del proyecto:</p>
             <p>Fecha: Junio - 2023</p>
             <div class="boton-contenedor">
@@ -288,26 +297,6 @@
   <script src="script.js"></script>
   <div id="modal" class="modal" onclick="cerrarModal()">
   <img id="modal-img" alt="Imagen ampliada">
-</div>
-<div id="proceso-modal" class="proceso-modal" onclick="cerrarProceso()">
-  <div class="proceso-contenido" onclick="event.stopPropagation()">
-    <button class="proceso-cerrar" onclick="cerrarProceso()">✕</button>
-    <p class="proceso-proyecto" id="proceso-proyecto"></p>
-    <h3 class="proceso-titulo" id="proceso-titulo"></h3>
-    <p class="proceso-texto" id="proceso-texto"></p>
-    <div class="proceso-nav">
-      <button class="proceso-flecha" onclick="pasoAnterior()">‹</button>
-      <div class="proceso-puntos" id="proceso-puntos">
-        <span class="proceso-punto" onclick="irAPaso(0)"></span>
-        <span class="proceso-punto" onclick="irAPaso(1)"></span>
-        <span class="proceso-punto" onclick="irAPaso(2)"></span>
-        <span class="proceso-punto" onclick="irAPaso(3)"></span>
-        <span class="proceso-punto" onclick="irAPaso(4)"></span>
-      </div>
-      <button class="proceso-flecha" onclick="pasoSiguiente()">›</button>
-    </div>
-    <p class="proceso-contador" id="proceso-contador"></p>
-  </div>
 </div>
 <button id="dark-mode-toggle" class="btn-toggle" title="Cambiar modo">
     <img id="toggle-icon" src="img/moon-outline.svg" alt="Icono modo" class="icono-toggle">
